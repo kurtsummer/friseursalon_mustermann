@@ -6,7 +6,7 @@ import { AddPromptModal } from "../components/AddPromptModal";
 import { PromptGenerator } from "../components/PromptGenerator";
 import { ThemeToggle } from "../components/ThemeToggle";
 import { Prompt } from "../types/prompt";
-import { Sparkles, Database, LayoutGrid, Wand2, Palette } from "lucide-react";
+import { Sparkles, Database, LayoutGrid, Wand2 } from "lucide-react";
 
 import { Button } from "../components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
@@ -96,11 +96,6 @@ export default function Index() {
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 dark:bg-zinc-900/90 shadow-sm border border-primary/20 text-sm font-bold animate-bounce-subtle mx-auto">
-              <Palette className="w-4 h-4 text-primary" />
-              <span className="text-primary">Frisches Grün-Design Aktiviert</span>
-            </div>
-
             <h2 className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tight leading-[1.1]">
               Gestalte die <span className="text-primary italic drop-shadow-sm">Zukunft</span> deiner <span className="text-secondary drop-shadow-sm">Bilder</span>
             </h2>
