@@ -12,27 +12,37 @@ import {
   Flame, 
   Wallet,
   CheckCircle2,
-  ChevronRight,
-  UtensilsCrossed
+  UtensilsCrossed,
+  ListChecks,
+  Info
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-interface MealPlan {
+interface Meal {
+  type: string;
+  name: string;
+  calories: number;
+  time: string;
+  ingredients: string[];
+  instructions: string[];
+}
+
+interface DayPlan {
   day: string;
-  meals: {
-    type: string;
-    name: string;
-    calories: number;
-    time: string;
-    ingredients: string[];
-  }[];
+  meals: Meal[];
 }
 
 const Plan = () => {
   const navigate = useNavigate();
-  const [plan, setPlan] = useState<MealPlan[]>([]);
+  const [plan, setPlan] = useState<DayPlan[]>([]);
   const [inputData, setInputData] = useState<any>(null);
 
   useEffect(() => {
@@ -49,48 +59,95 @@ const Plan = () => {
   const generateMockPlan = (data: any) => {
     const days = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
     
-    // Simple mock generation based on diet
-    const recipes = {
+    const recipes: Record<string, Omit<Meal, "type">[]> = {
       Omnivor: [
-        { name: "Hähnchen-Reis-Pfanne", cal: 650, time: "25 Min", ingredients: ["Hähnchen", "Reis", "Brokkoli", "Sojasauce"] },
-        { name: "Pasta Bolognese", cal: 750, time: "30 Min", ingredients: ["Rinderhack", "Pasta", "Tomatensauce", "Parmesan"] },
-        { name: "Lachs mit Kartoffeln", cal: 550, time: "20 Min", ingredients: ["Lachs", "Kartoffeln", "Spargel", "Zitrone"] },
+        { 
+          name: "Hähnchen-Reis-Pfanne", 
+          calories: 650, 
+          time: "25 Min", 
+          ingredients: ["150g Hähnchenbrust", "80g Reis (ungekocht)", "150g Brokkoli", "1 EL Sojasauce", "1 TL Öl"],
+          instructions: ["Reis nach Packungsanweisung kochen.", "Hähnchen in Würfel schneiden und in Öl goldbraun braten.", "Brokkoli kurz mitdünsten.", "Mit Sojasauce ablöschen und alles vermengen."]
+        },
+        { 
+          name: "Pasta Bolognese", 
+          calories: 750, 
+          time: "30 Min", 
+          ingredients: ["100g Rinderhack", "100g Vollkornpasta", "200ml Tomatensauce", "1 EL Parmesan", "Zwiebel, Knoblauch"],
+          instructions: ["Pasta kochen.", "Hackfleisch mit Zwiebeln und Knoblauch anbraten.", "Tomatensauce hinzufügen und 10 Min. köcheln lassen.", "Mit Parmesan servieren."]
+        },
       ],
       Vegetarisch: [
-        { name: "Linsencurry", cal: 600, time: "30 Min", ingredients: ["Linsen", "Kokosmilch", "Reis", "Spinat"] },
-        { name: "Gemüselasagne", cal: 700, time: "45 Min", ingredients: ["Lasagneblätter", "Zucchini", "Tomaten", "Mozzarella"] },
-        { name: "Kichererbsen-Salat", cal: 500, time: "15 Min", ingredients: ["Kichererbsen", "Gurke", "Feta", "Olivenöl"] },
+        { 
+          name: "Linsencurry", 
+          calories: 600, 
+          time: "30 Min", 
+          ingredients: ["80g rote Linsen", "100ml Kokosmilch", "60g Reis", "Eine Handvoll Spinat", "Currygewürz"],
+          instructions: ["Linsen und Reis separat kochen.", "Linsen mit Kokosmilch und Gewürzen erhitzen.", "Zum Schluss Spinat unterrühren, bis er zusammenfällt."]
+        },
+        { 
+          name: "Kichererbsen-Salat", 
+          calories: 500, 
+          time: "15 Min", 
+          ingredients: ["1 Dose Kichererbsen (abgespült)", "1/2 Gurke", "50g Feta", "1 EL Olivenöl", "Zitrone"],
+          instructions: ["Gurke würfeln.", "Kichererbsen, Gurke und zerbröselten Feta mischen.", "Dressing aus Öl und Zitrone darübergeben."]
+        },
       ],
       Vegan: [
-        { name: "Tofu Stir-fry", cal: 550, time: "20 Min", ingredients: ["Tofu", "Paprika", "Reisnudeln", "Erdnusssauce"] },
-        { name: "Süßkartoffel-Bowl", cal: 650, time: "25 Min", ingredients: ["Süßkartoffel", "Quinoa", "Avocado", "Bohnen"] },
-        { name: "Veganes Chili", cal: 600, time: "40 Min", ingredients: ["Sojahack", "Mais", "Bohnen", "Tomaten"] },
+        { 
+          name: "Tofu Stir-fry", 
+          calories: 550, 
+          time: "20 Min", 
+          ingredients: ["150g Tofu (fest)", "1 Paprika", "100g Reisnudeln", "2 EL Erdnusssauce"],
+          instructions: ["Reisnudeln mit heißem Wasser übergießen.", "Tofu würfeln und kross anbraten.", "Paprika dazugeben und kurz mitbraten.", "Mit Erdnusssauce und Nudeln vermischen."]
+        },
       ],
       "High Protein": [
-        { name: "Putensteak mit Quark", cal: 600, time: "20 Min", ingredients: ["Pute", "Magerquark", "Gemüse", "Leinsamen"] },
-        { name: "Rindersteak mit Salat", cal: 700, time: "25 Min", ingredients: ["Rind", "Mix-Salat", "Nüsse", "Ei"] },
+        { 
+          name: "Putensteak mit Quark", 
+          calories: 600, 
+          time: "20 Min", 
+          ingredients: ["200g Putensteak", "150g Magerquark", "Gemischtes Pfannengemüse", "Kräuter"],
+          instructions: ["Pute von beiden Seiten ca. 4 Min. braten.", "Quark mit Kräutern glatt rühren.", "Gemüse in der gleichen Pfanne dünsten."]
+        },
       ],
       "Low Carb": [
-        { name: "Zucchini-Nudeln mit Pesto", cal: 400, time: "15 Min", ingredients: ["Zucchini", "Basilikum", "Pinienkerne", "Parmesan"] },
-        { name: "Gebackener Feta mit Gemüse", cal: 500, time: "20 Min", ingredients: ["Feta", "Tomaten", "Paprika", "Zwiebeln"] },
+        { 
+          name: "Zucchini-Nudeln mit Pesto", 
+          calories: 400, 
+          time: "15 Min", 
+          ingredients: ["2 große Zucchini", "2 EL Basilikumpesto", "10g Pinienkerne", "Parmesan (optional)"],
+          instructions: ["Zucchini mit Spiralschneider zu Nudeln verarbeiten.", "In der Pfanne 2-3 Min. andünsten.", "Mit Pesto und Pinienkernen vermengen."]
+        },
       ]
     };
 
-    const selectedRecipes = recipes[data.diet as keyof typeof recipes] || recipes.Omnivor;
+    const selectedPool = recipes[data.diet as keyof typeof recipes] || recipes.Omnivor;
 
     const mockPlan = days.map(day => ({
       day,
       meals: [
-        { type: "Frühstück", name: "Haferflocken mit Beeren", calories: Math.round(data.calories * 0.25), time: "10 Min", ingredients: ["Haferflocken", "Beeren", "Milch/Ersatz"] },
+        { 
+          type: "Frühstück", 
+          name: "Haferflocken mit Beeren", 
+          calories: Math.round(data.calories * 0.25), 
+          time: "10 Min", 
+          ingredients: ["50g Haferflocken", "100g TK-Beeren", "150ml Milch oder Pflanzendrink", "1 TL Honig"],
+          instructions: ["Haferflocken mit Milch aufkochen oder einweichen.", "Beeren und Honig unterrühren."]
+        },
         { 
           type: "Mittagessen", 
-          name: selectedRecipes[Math.floor(Math.random() * selectedRecipes.length)].name, 
-          calories: Math.round(data.calories * 0.4), 
-          time: selectedRecipes[Math.floor(Math.random() * selectedRecipes.length)].time,
-          ingredients: selectedRecipes[Math.floor(Math.random() * selectedRecipes.length)].ingredients
+          ...selectedPool[Math.floor(Math.random() * selectedPool.length)],
+          type: "Mittagessen" // Ensure type is correct
         },
-        { type: "Abendessen", name: "Leichte Bowl", calories: Math.round(data.calories * 0.35), time: "15 Min", ingredients: ["Salat", "Hülsenfrüchte", "Dressing"] }
-      ]
+        { 
+          type: "Abendessen", 
+          name: "Protein-Salat-Bowl", 
+          calories: Math.round(data.calories * 0.35), 
+          time: "15 Min", 
+          ingredients: ["100g Mix-Salat", "1 Dose Thunfisch (im eigenen Saft) oder Kichererbsen", "1/2 Avocado", "Leichtes Dressing"],
+          instructions: ["Salat waschen.", "Thunfisch/Kichererbsen abtropfen lassen.", "Avocado aufschneiden und alles in einer Bowl anrichten."]
+        }
+      ].map(m => ({ ...m, type: m.type })) as Meal[]
     }));
 
     setPlan(mockPlan);
@@ -117,13 +174,11 @@ const Plan = () => {
               <CheckCircle2 className="w-4 h-4" /> Plan erfolgreich erstellt
             </div>
             <h1 className="text-4xl md:text-5xl font-black">Dein 7-Tage Plan</h1>
+            <p className="text-slate-500 mt-2 font-medium">Alle Rezepte sind für <span className="text-primary font-bold">1 Person</span> berechnet.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Button variant="outline" className="rounded-xl gap-2 font-bold border-slate-200">
+            <Button variant="outline" className="rounded-xl gap-2 font-bold border-slate-200" onClick={() => window.print()}>
               <Printer className="w-4 h-4" /> Drucken
-            </Button>
-            <Button variant="outline" className="rounded-xl gap-2 font-bold border-slate-200">
-              <Share2 className="w-4 h-4" /> Teilen
             </Button>
             <Button className="rounded-xl gap-2 font-bold bg-primary hover:bg-primary/90">
               <ShoppingCart className="w-4 h-4" /> Einkaufsliste
@@ -160,19 +215,22 @@ const Plan = () => {
                   </div>
                 </div>
                 <div className="pt-6 border-t border-slate-100">
-                  <p className="text-xs text-slate-400 font-medium leading-relaxed">
-                    Basierend auf deinen Angaben haben wir eine ausgewogene Mischung aus schnellen und nahrhaften Mahlzeiten zusammengestellt.
-                  </p>
+                  <div className="flex items-start gap-3 p-3 rounded-2xl bg-blue-50 border border-blue-100">
+                    <Info className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
+                    <p className="text-[11px] text-blue-700 font-medium leading-relaxed">
+                      Die Mengenangaben beziehen sich auf eine Portion pro Mahlzeit.
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
 
             <div className="p-6 rounded-[2rem] bg-secondary/10 border border-secondary/20">
               <h4 className="font-bold text-secondary mb-2 flex items-center gap-2">
-                <ChefHat className="w-4 h-4" /> Profi-Tipp
+                <ListChecks className="w-4 h-4" /> Batch Cooking
               </h4>
               <p className="text-sm text-slate-600 leading-relaxed font-medium">
-                Koche am Sonntag größere Portionen (Batch Cooking), um unter der Woche Zeit zu sparen!
+                Bereite Fleisch/Tofu und Kohlenhydrate (Reis/Pasta) für 2-3 Tage vor, um Zeit zu sparen.
               </p>
             </div>
           </div>
@@ -196,45 +254,68 @@ const Plan = () => {
 
               {plan.map(day => (
                 <TabsContent key={day.day} value={day.day} className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  {day.meals.map((meal, i) => (
-                    <div 
-                      key={i} 
-                      className="group bg-white p-6 md:p-8 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-primary/5 transition-all flex flex-col md:flex-row gap-8 items-start md:items-center"
-                    >
-                      <div className="w-full md:w-32 flex flex-col items-center justify-center p-4 rounded-3xl bg-slate-50 group-hover:bg-primary/5 transition-colors">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">{meal.type}</span>
-                        <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-2">
-                          {meal.type === "Frühstück" ? "🥣" : meal.type === "Mittagessen" ? "🥘" : "🥗"}
-                        </div>
-                      </div>
+                  <Accordion type="single" collapsible className="space-y-4">
+                    {day.meals.map((meal, i) => (
+                      <AccordionItem 
+                        key={i} 
+                        value={`item-${i}`}
+                        className="bg-white px-6 md:px-8 py-2 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-primary/5 transition-all"
+                      >
+                        <AccordionTrigger className="hover:no-underline py-6">
+                          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center w-full text-left">
+                            <div className="w-full md:w-24 flex flex-col items-center justify-center p-3 rounded-2xl bg-slate-50 group-hover:bg-primary/5 transition-colors">
+                              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">{meal.type}</span>
+                              <span className="text-2xl">
+                                {meal.type === "Frühstück" ? "🥣" : meal.type === "Mittagessen" ? "🥘" : "🥗"}
+                              </span>
+                            </div>
 
-                      <div className="flex-1 space-y-4">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                          <h3 className="text-2xl font-black">{meal.name}</h3>
-                          <div className="flex items-center gap-3">
-                             <Badge variant="outline" className="rounded-full border-slate-200 font-bold py-1 px-3">
-                               <Clock className="w-3 h-3 mr-1.5 text-primary" /> {meal.time}
-                             </Badge>
-                             <Badge variant="outline" className="rounded-full border-slate-200 font-bold py-1 px-3">
-                               <Flame className="w-3 h-3 mr-1.5 text-orange-500" /> {meal.calories} kcal
-                             </Badge>
+                            <div className="flex-1 space-y-2">
+                              <h3 className="text-xl font-black">{meal.name}</h3>
+                              <div className="flex items-center gap-3">
+                                <Badge variant="secondary" className="rounded-full font-bold">
+                                  <Clock className="w-3 h-3 mr-1 text-primary" /> {meal.time}
+                                </Badge>
+                                <Badge variant="secondary" className="rounded-full font-bold">
+                                  <Flame className="w-3 h-3 mr-1 text-orange-500" /> {meal.calories} kcal
+                                </Badge>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2">
-                          {meal.ingredients.map((ing, j) => (
-                            <span key={j} className="text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">
-                              {ing}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <Button variant="ghost" size="icon" className="hidden md:flex rounded-full hover:bg-primary/10 hover:text-primary transition-all">
-                        <ChevronRight className="w-6 h-6" />
-                      </Button>
-                    </div>
-                  ))}
+                        </AccordionTrigger>
+                        <AccordionContent className="pb-8 pt-4 border-t border-slate-50">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                              <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <ListChecks className="w-4 h-4 text-primary" /> Zutaten (1 Person)
+                              </h4>
+                              <ul className="space-y-2">
+                                {meal.ingredients.map((ing, j) => (
+                                  <li key={j} className="flex items-center gap-3 text-slate-600 font-medium text-sm">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-primary/40"></div>
+                                    {ing}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div>
+                              <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <ChefHat className="w-4 h-4 text-primary" /> Zubereitung
+                              </h4>
+                              <ol className="space-y-4">
+                                {meal.instructions.map((step, j) => (
+                                  <li key={j} className="flex gap-3 text-slate-600 text-sm leading-relaxed">
+                                    <span className="font-black text-primary/40 shrink-0">{j + 1}.</span>
+                                    {step}
+                                  </li>
+                                ))}
+                              </ol>
+                            </div>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
                 </TabsContent>
               ))}
             </Tabs>
