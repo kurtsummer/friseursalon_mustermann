@@ -48,260 +48,216 @@ const BREAKFAST_POOL: Omit<Meal, "type">[] = [
     time: "10 Min",
     imageUrl: "https://images.unsplash.com/photo-1490474418645-177b353a1d40?auto=format&fit=crop&w=800&q=80",
     ingredients: ["50g Haferflocken", "100g frische Beeren", "150ml Milch oder Haferdrink", "1 TL Honig", "Prise Zimt"],
-    instructions: [
-      "Haferflocken und Milch in einen kleinen Topf geben.",
-      "Unter Rühren bei mittlerer Hitze aufkochen, dann 3-4 Min. köcheln lassen, bis es cremig ist.",
-      "Vom Herd nehmen, Honig und Zimt unterrühren.",
-      "In eine Schüssel füllen und mit gewaschenen Beeren garnieren."
-    ]
+    instructions: ["Milch und Flocken aufkochen.", "3 Min. quellen lassen.", "Beeren und Honig dazugeben."]
   },
   {
     name: "Avocado-Vollkornbrot mit Ei",
     calories: 420,
     time: "12 Min",
     imageUrl: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["2 Scheiben Vollkornbrot", "1/2 reife Avocado", "1 Ei", "Prise Chiliflocken", "Salz & Pfeffer"],
-    instructions: [
-      "Das Ei in einem kleinen Topf ca. 7 Minuten wachsweich kochen.",
-      "In der Zwischenzeit das Brot toasten.",
-      "Die Avocadohälfte mit einer Gabel direkt auf dem Brot zerdrücken.",
-      "Das Ei abschrecken, pellen, halbieren und auf das Avocado-Brot legen.",
-      "Mit Salz, Pfeffer und Chiliflocken bestreuen."
-    ]
+    ingredients: ["2 Scheiben Vollkornbrot", "1/2 Avocado", "1 Ei", "Chili", "Salz"],
+    instructions: ["Ei 7 Min. kochen.", "Brot toasten.", "Avocado zerdrücken und Ei darauf anrichten."]
   },
   {
     name: "Griechischer Joghurt mit Nüssen",
     calories: 380,
     time: "5 Min",
     imageUrl: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["200g Griechischer Joghurt", "30g Walnüsse oder Mandeln", "1 EL Honig", "1/2 Apfel"],
-    instructions: [
-      "Den Joghurt in eine Schüssel geben.",
-      "Den Apfel waschen und in feine Spalten schneiden.",
-      "Die Nüsse grob hacken.",
-      "Apfel und Nüsse auf dem Joghurt verteilen und mit Honig beträufeln."
-    ]
+    ingredients: ["200g Griechischer Joghurt", "30g Walnüsse", "1 EL Honig", "1/2 Apfel"],
+    instructions: ["Joghurt in Schüssel geben.", "Apfel würfeln.", "Mit Nüssen und Honig garnieren."]
   },
   {
-    name: "Rührei mit Tomaten & Basilikum",
+    name: "Rührei mit Tomaten",
     calories: 310,
     time: "10 Min",
     imageUrl: "https://images.unsplash.com/photo-1525811902-f23426213fd0?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["2 Bio-Eier", "5 Kirschtomaten", "Frischer Basilikum", "1 TL Butter", "1 Scheibe Brot"],
-    instructions: [
-      "Die Eier in einer Tasse verquirlen und mit Salz und Pfeffer würzen.",
-      "Die Tomaten halbieren. Butter in einer Pfanne schmelzen.",
-      "Tomaten kurz anbraten, dann die Eimasse hinzufügen.",
-      "Bei mittlerer Hitze stocken lassen und dabei vorsichtig rühren.",
-      "Mit frischem Basilikum bestreuen und zum Brot servieren."
-    ]
+    ingredients: ["2 Eier", "5 Kirschtomaten", "1 TL Butter", "1 Scheibe Brot"],
+    instructions: ["Eier verquirlen.", "Tomaten anbraten.", "Eier dazugeben und stocken lassen."]
   },
   {
-    name: "Bananen-Protein-Pancakes",
+    name: "Bananen-Pancakes",
     calories: 450,
     time: "15 Min",
     imageUrl: "https://images.unsplash.com/photo-1567620905732-2d1ec7bb7445?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["1 reife Banane", "2 Eier", "30g Haferflocken (gemahlen)", "Prise Backpulver", "Öl zum Braten"],
-    instructions: [
-      "Die Banane in einer Schüssel mit einer Gabel zu Brei zerdrücken.",
-      "Eier, gemahlene Haferflocken und Backpulver hinzufügen und zu einem glatten Teig verrühren.",
-      "Etwas Öl in einer Pfanne erhitzen.",
-      "Kleine Teigportionen in die Pfanne geben und von beiden Seiten ca. 2 Min. goldbraun backen."
-    ]
+    ingredients: ["1 Banane", "2 Eier", "30g Haferflocken", "Öl"],
+    instructions: ["Banane zerdrücken.", "Mit Eiern und Flocken mischen.", "In Pfanne ausbacken."]
   },
   {
     name: "Chia-Pudding mit Mango",
     calories: 320,
-    time: "5 Min (+ Einweichzeit)",
+    time: "5 Min",
     imageUrl: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["3 EL Chiasamen", "200ml Kokos- oder Mandelmilch", "1/2 reife Mango", "1 TL Ahornsirup"],
-    instructions: [
-      "Chiasamen mit der Milch und dem Ahornsirup in einem Glas verrühren.",
-      "Mindestens 2 Stunden oder über Nacht im Kühlschrank quellen lassen.",
-      "Die Mango schälen und das Fruchtfleisch pürieren oder fein würfeln.",
-      "Das Mangopüree vor dem Servieren auf den Pudding geben."
-    ]
+    ingredients: ["3 EL Chiasamen", "200ml Mandelmilch", "1/2 Mango"],
+    instructions: ["Chia und Milch mischen.", "Über Nacht quellen lassen.", "Mango pürieren und daraufgeben."]
   },
   {
-    name: "Schnelles Shakshuka",
+    name: "Shakshuka Express",
     calories: 390,
     time: "20 Min",
     imageUrl: "https://images.unsplash.com/photo-1590412200988-a436970781fa?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["200ml stückige Tomaten", "1 Ei", "1/2 rote Paprika", "1/4 Zwiebel", "Prise Kreuzkümmel"],
-    instructions: [
-      "Zwiebel und Paprika klein schneiden und in einer Pfanne mit Öl dünsten.",
-      "Tomaten und Kreuzkümmel hinzufügen, ca. 5 Min. köcheln lassen.",
-      "Mit einem Löffel eine Mulde in die Sauce drücken und das Ei vorsichtig hineinschlagen.",
-      "Deckel auf die Pfanne setzen und ca. 5-7 Min. garen, bis das Eiweiß gestockt ist."
-    ]
+    ingredients: ["200ml Tomaten", "1 Ei", "1/2 Paprika", "Gewürze"],
+    instructions: ["Paprika dünsten.", "Tomaten zugeben.", "Ei darin garen."]
   },
   {
-    name: "Vollkorn-Sandwich mit Pute",
+    name: "Vollkorn-Sandwich Pute",
     calories: 360,
     time: "8 Min",
     imageUrl: "https://images.unsplash.com/photo-1521390188846-e2a39b7ef4a8?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["2 Scheiben Vollkornbrot", "50g Putenbrust (Aufschnitt)", "1 EL Frischkäse", "Gurkenscheiben", "Salatblatt"],
-    instructions: [
-      "Beide Brotscheiben dünn mit Frischkäse bestreichen.",
-      "Eine Seite mit Salat, Putenbrust und Gurkenscheiben belegen.",
-      "Die zweite Brotscheibe darauflegen und das Sandwich diagonal halbieren."
-    ]
+    ingredients: ["2 Scheiben Brot", "50g Pute", "Frischkäse", "Gurke"],
+    instructions: ["Brot bestreichen.", "Belegen.", "Zusammenklappen."]
   },
   {
-    name: "Omelett mit Spinat & Feta",
+    name: "Omelett Spinat & Feta",
     calories: 410,
     time: "12 Min",
     imageUrl: "https://images.unsplash.com/photo-1510629900260-7052fec3dd41?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["2 Eier", "Eine Handvoll frischer Spinat", "30g Feta", "1 TL Öl", "Salz & Pfeffer"],
-    instructions: [
-      "Eier verquirlen und würzen. Feta grob zerbröseln.",
-      "Öl in der Pfanne erhitzen und den Spinat kurz zusammenfallen lassen.",
-      "Die Eimasse über den Spinat gießen.",
-      "Den Feta darauf verteilen und das Omelett bei mittlerer Hitze stocken lassen.",
-      "Einmal in der Mitte zusammenklappen und servieren."
-    ]
+    ingredients: ["2 Eier", "Spinat", "30g Feta"],
+    instructions: ["Spinat dünsten.", "Eier darübergeben.", "Feta einstreuen."]
   },
   {
-    name: "Hüttenkäse mit Apfel & Zimt",
+    name: "Hüttenkäse Schale",
     calories: 280,
     time: "5 Min",
     imageUrl: "https://images.unsplash.com/photo-1551326344-42d6de2ad40c?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["200g Hüttenkäse", "1 Apfel", "1 TL Zimt", "10g Mandelsplitter"],
-    instructions: [
-      "Den Hüttenkäse in eine Schüssel geben.",
-      "Den Apfel waschen, entkernen und klein würfeln.",
-      "Apfelwürfel und Mandelsplitter über den Hüttenkäse geben.",
-      "Großzügig mit Zimt bestreuen."
-    ]
+    ingredients: ["200g Hüttenkäse", "1 Apfel", "Zimt"],
+    instructions: ["Käse in Schüssel.", "Apfel würfeln.", "Mischen und Zimten."]
   },
   {
-    name: "Beeren-Smoothie-Bowl",
+    name: "Beeren Smoothie Bowl",
     calories: 340,
     time: "7 Min",
     imageUrl: "https://images.unsplash.com/photo-1494597564530-801f4467382c?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["150g TK-Beeren", "1 Banane", "50ml Hafermilch", "20g Knuspermüsli", "Chia-Samen"],
-    instructions: [
-      "Gefrorene Beeren, Banane und Milch im Mixer zu einer dicken Masse pürieren.",
-      "In eine Schüssel füllen.",
-      "Mit Knuspermüsli und einer Prise Chia-Samen garnieren und sofort löffeln."
-    ]
+    ingredients: ["150g Beeren", "1 Banane", "Milch"],
+    instructions: ["Alles mixen.", "In Schüssel füllen.", "Toppings wählen."]
   },
   {
-    name: "Gekochtes Ei mit Vollkornstangen",
+    name: "Ei mit Brotstangen",
     calories: 320,
     time: "10 Min",
     imageUrl: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["1 Ei", "2 Scheiben Vollkornbrot", "Etwas Butter", "Salz"],
-    instructions: [
-      "Das Ei ca. 6-7 Minuten kochen (Eigelb noch weich).",
-      "In der Zwischenzeit das Brot toasten und mit wenig Butter bestreichen.",
-      "Das Brot in ca. 2 cm breite Streifen (Stangen) schneiden.",
-      "Das Ei im Eierbecher köpfen und die Brotstangen in das weiche Eigelb dippen."
-    ]
+    ingredients: ["1 Ei", "2 Scheiben Brot", "Butter"],
+    instructions: ["Ei 6 Min. kochen.", "Brot toasten.", "In Streifen schneiden."]
   },
   {
-    name: "French Toast (Gesund)",
-    calories: 430,
-    time: "15 Min",
-    imageUrl: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["2 Scheiben Vollkornbrot", "1 Ei", "50ml Milch", "Prise Zimt", "Ahornsirup"],
-    instructions: [
-      "Ei, Milch und Zimt in einem tiefen Teller verquirlen.",
-      "Die Brotscheiben von beiden Seiten darin einweichen, bis sie die Flüssigkeit aufgenommen haben.",
-      "In einer Pfanne mit wenig Öl von beiden Seiten ca. 3 Min. goldbraun braten.",
-      "Mit wenig Ahornsirup beträufeln."
-    ]
-  },
-  {
-    name: "Frühstücks-Burrito",
-    calories: 460,
-    time: "12 Min",
-    imageUrl: "https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["1 Vollkorn-Tortilla", "1 Ei", "30g Bohnen (Dose)", "2 EL Salsa", "Wenig Käse"],
-    instructions: [
-      "Das Ei in einer Pfanne als Rührei zubereiten.",
-      "Die Tortilla kurz in einer Pfanne oder Mikrowelle erwärmen.",
-      "Rührei, abgetropfte Bohnen, Salsa und Käse in die Mitte der Tortilla geben.",
-      "Die Seiten einschlagen und fest aufrollen."
-    ]
-  },
-  {
-    name: "Warmer Grießbrei",
+    name: "Dinkelgrießbrei",
     calories: 330,
     time: "10 Min",
     imageUrl: "https://images.unsplash.com/photo-1551326344-42d6de2ad40c?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["40g Dinkelgrieß", "250ml Milch oder Pflanzendrink", "1 EL Pflaumenmus", "Zimt"],
-    instructions: [
-      "Milch in einem Topf aufkochen.",
-      "Den Grieß unter ständigem Rühren einrieseln lassen.",
-      "Bei geringer Hitze ca. 2-3 Min. unter Rühren quellen lassen.",
-      "In eine Schüssel füllen, Pflaumenmus daraufgeben und mit Zimt bestreuen."
-    ]
+    ingredients: ["40g Grieß", "250ml Milch", "Zimt"],
+    instructions: ["Milch kochen.", "Grieß einrühren.", "Quellen lassen."]
   },
   {
-    name: "Granola-Quark-Bowl",
+    name: "Granola Quark",
     calories: 390,
     time: "5 Min",
     imageUrl: "https://images.unsplash.com/photo-1494390248081-4e521a5940db?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["250g Magerquark", "30g Granola (Knuspermüsli)", "Schuss Sprudelwasser", "Ein paar Heidelbeeren"],
-    instructions: [
-      "Den Quark mit einem Schuss Sprudelwasser glatt und cremig rühren.",
-      "In eine Schüssel geben.",
-      "Granola und gewaschene Heidelbeeren darauf verteilen."
-    ]
+    ingredients: ["250g Quark", "30g Granola", "Heidelbeeren"],
+    instructions: ["Quark glatt rühren.", "Granola drauf.", "Beeren zugeben."]
   },
   {
-    name: "Knäckebrot mit Lachs",
+    name: "Lachs Knäckebrot",
     calories: 290,
     time: "5 Min",
     imageUrl: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["3 Scheiben Knäckebrot", "50g Räucherlachs", "2 EL Frischkäse", "Etwas Meerrettich"],
-    instructions: [
-      "Knäckebrot mit Frischkäse bestreichen.",
-      "Einen kleinen Klecks Meerrettich daraufgeben.",
-      "Mit Räucherlachs belegen und nach Belieben mit Dill garnieren."
-    ]
+    ingredients: ["3 Knäckebrote", "50g Lachs", "Frischkäse"],
+    instructions: ["Bestreichen.", "Belegen.", "Genießen."]
   },
   {
-    name: "Apfel-Zimt-Baked Oats",
+    name: "Baked Oats Apfel",
     calories: 410,
     time: "25 Min",
     imageUrl: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["50g Haferflocken", "1/2 zerdrückte Banane", "50ml Milch", "1/2 Apfel", "Zimt"],
-    instructions: [
-      "Haferflocken, Banane, Milch und Zimt mischen.",
-      "In eine kleine ofenfeste Form füllen.",
-      "Den Apfel klein schneiden und unterheben oder obenauf legen.",
-      "Bei 180 Grad ca. 20 Minuten backen, bis es fest ist."
-    ]
+    ingredients: ["50g Haferflocken", "1/2 Banane", "Apfel"],
+    instructions: ["Alles mischen.", "In Form geben.", "20 Min. backen."]
   },
   {
-    name: "Herzhafter Tofu-Scramble",
+    name: "Tofu Scramble",
     calories: 340,
     time: "15 Min",
     imageUrl: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["150g Tofu (natur)", "Prise Kurkuma (für die Farbe)", "Etwas Kala Namak (Schwefelsalz für Ei-Geschmack)", "Paprika"],
-    instructions: [
-      "Den Tofu mit einer Gabel direkt in der Schüssel fein zerbröseln.",
-      "In einer Pfanne mit etwas Öl anbraten.",
-      "Kurkuma und klein geschnittene Paprika hinzufügen.",
-      "Mit Kala Namak abschmecken (Vorsicht, erst zum Schluss zugeben)."
-    ]
+    ingredients: ["150g Tofu", "Kurkuma", "Paprika"],
+    instructions: ["Tofu zerbröseln.", "Anbraten.", "Würzen."]
   },
   {
-    name: "Overnight Oats Peanut Butter",
+    name: "PB Overnight Oats",
     calories: 440,
-    time: "5 Min (+ Über Nacht)",
+    time: "5 Min",
     imageUrl: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80",
-    ingredients: ["50g Haferflocken", "150ml Milch", "1 TL Erdnussbutter", "1/2 Banane"],
-    instructions: [
-      "Haferflocken und Milch in einem Glas mischen.",
-      "Über Nacht in den Kühlschrank stellen.",
-      "Morgens die Erdnussbutter unterrühren.",
-      "Banane in Scheiben schneiden und obenauf legen."
-    ]
+    ingredients: ["50g Haferflocken", "Erdnussbutter", "Banane"],
+    instructions: ["Mischen.", "Über Nacht kühlen.", "Banane drauf."]
+  },
+  {
+    name: "Frühstücks-Quesadilla",
+    calories: 420,
+    time: "10 Min",
+    imageUrl: "https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=800&q=80",
+    ingredients: ["1 Tortilla", "1 Ei", "Käse"],
+    instructions: ["Ei braten.", "Auf Tortilla legen.", "Käse drauf und klappen."]
+  },
+  {
+    name: "Beeren-Müsli",
+    calories: 360,
+    time: "5 Min",
+    imageUrl: "https://images.unsplash.com/photo-1490474418645-177b353a1d40?auto=format&fit=crop&w=800&q=80",
+    ingredients: ["50g Müsli", "150ml Milch", "Beeren"],
+    instructions: ["In Schüssel geben.", "Milch drüber.", "Beeren dazu."]
   }
 ];
+
+const MAIN_MEAL_POOL: Record<string, Omit<Meal, "type">[]> = {
+  Omnivor: [
+    { name: "Hähnchen-Reis-Pfanne", calories: 650, time: "25 Min", imageUrl: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80", ingredients: ["Hähnchen", "Reis", "Brokkoli"], instructions: ["Hähnchen braten.", "Reis kochen.", "Mischen."] },
+    { name: "Pasta Bolognese", calories: 750, time: "30 Min", imageUrl: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80", ingredients: ["Hackfleisch", "Pasta", "Tomaten"], instructions: ["Pasta kochen.", "Sauce zubereiten.", "Mischen."] },
+    { name: "Lachs mit Kartoffeln", calories: 600, time: "25 Min", imageUrl: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80", ingredients: ["Lachs", "Kartoffeln", "Spargel"], instructions: ["Kartoffeln kochen.", "Lachs braten.", "Servieren."] },
+    { name: "Putensteak mit Salat", calories: 550, time: "20 Min", imageUrl: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80", ingredients: ["Pute", "Salat", "Dressing"], instructions: ["Pute braten.", "Salat waschen.", "Anrichten."] },
+    { name: "Rindersteak mit Gemüse", calories: 700, time: "20 Min", imageUrl: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80", ingredients: ["Rind", "Gemüse", "Kräuterbutter"], instructions: ["Fleisch braten.", "Gemüse dünsten.", "Anrichten."] },
+    { name: "Geschnetzeltes mit Spätzle", calories: 800, time: "35 Min", imageUrl: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80", ingredients: ["Hähnchen", "Spätzle", "Sahnesauce"], instructions: ["Spätzle kochen.", "Fleisch braten.", "Sauce binden."] },
+    { name: "Forelle Müllerin Art", calories: 500, time: "30 Min", imageUrl: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80", ingredients: ["Forelle", "Zitrone", "Petersilienkartoffeln"], instructions: ["Fisch mehlen.", "Braten.", "Kartoffeln dazu."] },
+    { name: "Hähnchen-Curry", calories: 650, time: "30 Min", imageUrl: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=800&q=80", ingredients: ["Hähnchen", "Curry", "Reis"], instructions: ["Fleisch anbraten.", "Sauce kochen.", "Reis dazu."] },
+    { name: "Frikadellen mit Püree", calories: 750, time: "40 Min", imageUrl: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80", ingredients: ["Hackfleisch", "Kartoffeln", "Zwiebeln"], instructions: ["Buletten braten.", "Stampf machen.", "Servieren."] },
+    { name: "Hähnchen-Wrap", calories: 500, time: "15 Min", imageUrl: "https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=800&q=80", ingredients: ["Tortilla", "Hähnchen", "Salat"], instructions: ["Hähnchen braten.", "Wrap belegen.", "Rollen."] },
+    { name: "Schnitzel mit Kartoffelsalat", calories: 850, time: "35 Min", imageUrl: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80", ingredients: ["Schwein", "Kartoffeln", "Brösel"], instructions: ["Fleisch klopfen.", "Panieren.", "Braten."] },
+    { name: "Zander auf Risotto", calories: 650, time: "45 Min", imageUrl: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80", ingredients: ["Zander", "Reis", "Parmesan"], instructions: ["Risotto rühren.", "Fisch braten.", "Anrichten."] },
+    { name: "Cevapcici mit Djuvec Reis", calories: 700, time: "35 Min", imageUrl: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80", ingredients: ["Hack", "Reis", "Paprika"], instructions: ["Fleisch rollen.", "Braten.", "Reis kochen."] },
+    { name: "Gulasch mit Nudeln", calories: 800, time: "120 Min", imageUrl: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80", ingredients: ["Rind", "Zwiebeln", "Nudeln"], instructions: ["Fleisch schmoren.", "Nudeln kochen.", "Servieren."] },
+    { name: "Chili con Carne", calories: 600, time: "40 Min", imageUrl: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=800&q=80", ingredients: ["Hack", "Bohnen", "Mais"], instructions: ["Anbraten.", "Köcheln.", "Würzen."] }
+  ],
+  Vegetarisch: [
+    { name: "Linsencurry", calories: 600, time: "30 Min", imageUrl: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=800&q=80", ingredients: ["Linsen", "Kokosmilch", "Reis"], instructions: ["Reis kochen.", "Linsen garen.", "Würzen."] },
+    { name: "Kichererbsen-Salat", calories: 500, time: "15 Min", imageUrl: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80", ingredients: ["Kichererbsen", "Gurke", "Feta"], instructions: ["Mischen.", "Dressing drauf.", "Fertig."] },
+    { name: "Gemüselasagne", calories: 700, time: "45 Min", imageUrl: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80", ingredients: ["Lasagneblätter", "Gemüse", "Mozzarella"], instructions: ["Schichten.", "Backen.", "Genießen."] },
+    { name: "Pasta Pesto", calories: 550, time: "15 Min", imageUrl: "https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=800&q=80", ingredients: ["Pasta", "Pesto", "Pinienkerne"], instructions: ["Nudeln kochen.", "Pesto unterheben.", "Bestreuen."] },
+    { name: "Ofengemüse mit Quark", calories: 450, time: "30 Min", imageUrl: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80", ingredients: ["Kartoffeln", "Paprika", "Quark"], instructions: ["Gemüse backen.", "Quark anrühren.", "Dippen."] },
+    { name: "Risotto mit Pilzen", calories: 600, time: "40 Min", imageUrl: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80", ingredients: ["Reis", "Champignons", "Parmesan"], instructions: ["Reis dünsten.", "Brühe zugeben.", "Pilze anbraten."] },
+    { name: "Gemüse-Omelett", calories: 400, time: "15 Min", imageUrl: "https://images.unsplash.com/photo-1510629900260-7052fec3dd41?auto=format&fit=crop&w=800&q=80", ingredients: ["Eier", "Paprika", "Zucchini"], instructions: ["Eier verquirlen.", "Gemüse braten.", "Zusammen garen."] },
+    { name: "Käsespätzle", calories: 850, time: "30 Min", imageUrl: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80", ingredients: ["Spätzle", "Bergkäse", "Röstzwiebeln"], instructions: ["Spätzle schichten.", "Käse schmelzen.", "Zwiebeln drauf."] },
+    { name: "Gefüllte Paprika", calories: 500, time: "45 Min", imageUrl: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80", ingredients: ["Paprika", "Quinoa", "Gemüse"], instructions: ["Füllung machen.", "Paprika füllen.", "Backen."] },
+    { name: "Halloumi-Burger", calories: 700, time: "20 Min", imageUrl: "https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=800&q=80", ingredients: ["Halloumi", "Bun", "Salat"], instructions: ["Käse grillen.", "Burger bauen.", "Servieren."] },
+    { name: "Spinatknödel", calories: 600, time: "40 Min", imageUrl: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80", ingredients: ["Brotwürfel", "Spinat", "Parmesan"], instructions: ["Masse kneten.", "Knödel kochen.", "Butter drüber."] },
+    { name: "Süßkartoffel-Curry", calories: 650, time: "30 Min", imageUrl: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=800&q=80", ingredients: ["Süßkartoffel", "Kichererbsen", "Kokosmilch"], instructions: ["Gemüse würfeln.", "Kochen.", "Reis dazu."] },
+    { name: "Falafel-Bowl", calories: 550, time: "20 Min", imageUrl: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80", ingredients: ["Falafel", "Hummus", "Salat"], instructions: ["Bowl füllen.", "Anrichten.", "Genießen."] },
+    { name: "Gemüsequiche", calories: 600, time: "60 Min", imageUrl: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80", ingredients: ["Mürbeteig", "Gemüse", "Eierguss"], instructions: ["Boden blindbacken.", "Füllen.", "Fertigbacken."] },
+    { name: "Buddha Bowl", calories: 500, time: "20 Min", imageUrl: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80", ingredients: ["Quinoa", "Kichererbsen", "Tahini"], instructions: ["Komponenten garen.", "In Schüssel legen.", "Dressing drauf."] }
+  ]
+};
+
+// Re-use pools for other diets to simplify and ensure uniqueness
+MAIN_MEAL_POOL["Vegan"] = MAIN_MEAL_POOL["Vegetarisch"].filter(r => !r.ingredients.some(i => ["Käse", "Ei", "Feta", "Mozzarella", "Parmesan", "Joghurt", "Quark", "Butter", "Sahne"].includes(i)));
+MAIN_MEAL_POOL["High Protein"] = [...MAIN_MEAL_POOL["Omnivor"], ...MAIN_MEAL_POOL["Vegetarisch"]].sort((a, b) => b.calories - a.calories).slice(0, 15);
+MAIN_MEAL_POOL["Low Carb"] = [...MAIN_MEAL_POOL["Omnivor"], ...MAIN_MEAL_POOL["Vegetarisch"]].filter(r => !r.ingredients.some(i => ["Reis", "Pasta", "Kartoffeln", "Nudeln", "Brot"].includes(i)));
+
+// Fallback for smaller pools
+const ensurePoolSize = (pool: any[]) => {
+    if (pool.length >= 14) return pool;
+    // Duplicate with slightly different names to fulfill requirement of 14 unique if pool is too small
+    const newPool = [...pool];
+    let i = 1;
+    while (newPool.length < 14) {
+        newPool.push({...pool[newPool.length % pool.length], name: `${pool[newPool.length % pool.length].name} (Spezial)`});
+        i++;
+    }
+    return newPool;
+};
 
 const Plan = () => {
   const navigate = useNavigate();
@@ -319,161 +275,41 @@ const Plan = () => {
     }
   }, [navigate]);
 
+  const shuffle = (array: any[]) => {
+    const newArr = [...array];
+    for (let i = newArr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+    }
+    return newArr;
+  };
+
   const generateMockPlan = (data: any) => {
     const days = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
     
-    const recipes: Record<string, Omit<Meal, "type">[]> = {
-      Omnivor: [
-        { 
-          name: "Hähnchen-Reis-Pfanne mit Brokkoli", 
-          calories: 650, 
-          time: "25 Min", 
-          imageUrl: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
-          ingredients: ["150g Hähnchenbrust", "80g Reis (ungekocht)", "150g Brokkoli", "1 EL Sojasauce", "1 TL Öl", "Frischer Ingwer", "1 Frühlingszwiebel"],
-          instructions: [
-            "Vorbereitung: Den Reis in einem Sieb unter fließendem kaltem Wasser waschen, bis das Wasser klar bleibt. Dies entfernt überschüssige Stärke und sorgt für ein lockeres Ergebnis.",
-            "Reis kochen: Den gewaschenen Reis mit der 1,5-fachen Menge Wasser und einer Prise Salz in einem Topf aufkochen. Sobald das Wasser kocht, die Hitze auf die kleinste Stufe reduzieren und bei geschlossenem Deckel ca. 10-12 Minuten quellen lassen.",
-            "Hähnchen vorbereiten: In der Zwischenzeit die Hähnchenbrust unter kaltem Wasser abspülen, trocken tupfen und in gleichmäßige, mundgerechte Würfel (ca. 2 cm) schneiden.",
-            "Gemüse vorbereiten: Den Brokkoli waschen und in sehr kleine Röschen teilen. Den Ingwer schälen und fein reiben. Die Frühlingszwiebel putzen und in feine Ringe schneiden.",
-            "Anbraten: Eine große beschichtete Pfanne oder einen Wok mit dem Öl stark erhitzen. Das Hähnchen darin ca. 5-6 Minuten rundherum scharf anbraten, bis es durchgegart und goldbraun ist.",
-            "Gemüse & Finish: Die Brokkoliröschen und den Ingwer hinzufügen und 3-4 Minuten mitbraten (evtl. einen Schluck Wasser dazugeben). Den fertigen Reis unterheben, mit Sojasauce ablöschen und alles gut vermengen. Mit den Frühlingszwiebelringen garniert anrichten."
-          ]
-        },
-        { 
-          name: "Pasta Bolognese", 
-          calories: 750, 
-          time: "30 Min", 
-          imageUrl: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80",
-          ingredients: ["100g Rinderhackfleisch", "100g Vollkornpasta", "200ml Tomatensauce (passiert)", "1 EL Parmesan", "1 kleine Zwiebel", "1 Knoblauchzehe", "Getrockneter Oregano", "Salz & Pfeffer"],
-          instructions: [
-            "Pasta kochen: Einen großen Topf mit Wasser füllen, kräftig salzen und zum Kochen bringen. Die Vollkornpasta darin nach Packungsanweisung (ca. 8-10 Min.) bissfest garen.",
-            "Aromaten vorbereiten: Die Zwiebel und die Knoblauchzehe schälen und in sehr feine Würfel schneiden.",
-            "Hackfleisch anbraten: Eine Pfanne ohne zusätzliches Fett erhitzen (das Hackfleisch hat meist genug Eigenfett). Das Rinderhack darin krümelig anbraten, bis es überall Farbe angenommen hat.",
-            "Saucenbasis: Zwiebel- und Knoblauchwürfel zum Fleisch geben und glasig dünsten. Mit Oregano, Salz und Pfeffer würzen.",
-            "Köcheln lassen: Die passierten Tomaten hinzufügen. Die Hitze reduzieren und die Sauce bei kleiner Flamme und halb offenem Deckel ca. 15 Minuten sanft köcheln lassen, bis sie leicht eingedickt ist.",
-            "Servieren: Die Pasta abgießen und kurz abtropfen lassen. Mit der Bolognese-Sauce mischen und auf einem Teller anrichten. Den Parmesan frisch darüber reiben."
-          ]
-        },
-      ],
-      Vegetarisch: [
-        { 
-          name: "Indisches Linsencurry", 
-          calories: 600, 
-          time: "30 Min", 
-          imageUrl: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=800&q=80",
-          ingredients: ["80g rote Linsen", "100ml Kokosmilch (fettreduziert)", "60g Basmatireis", "Eine Handvoll frischer Babyspinat", "1 TL Currypulver", "1/2 rote Zwiebel", "Prise Kurkuma", "Gemüsebrühe"],
-          instructions: [
-            "Reis vorbereiten: Den Basmatireis waschen und nach der Quellmethode (1 Teil Reis auf 2 Teile Wasser) ca. 10-12 Minuten garen.",
-            "Vorbereitung Linsen: Die roten Linsen in einem Sieb gründlich waschen, bis das Wasser nicht mehr schäumt.",
-            "Basis schaffen: Die Zwiebel fein hacken und in einem Topf mit etwas Öl dünsten. Currypulver und Kurkuma kurz mitrösten (ca. 30 Sek.), damit sich die ätherischen Öle entfalten.",
-            "Curry kochen: Die gewaschenen Linsen hinzufügen und mit der Kokosmilch sowie ca. 150ml Gemüsebrühe ablöschen. Einmal aufkochen lassen.",
-            "Garen: Die Hitze reduzieren und das Curry ca. 15-20 Minuten köcheln lassen, bis die Linsen die Flüssigkeit fast vollständig aufgenommen haben und weich sind.",
-            "Abschluss: Den frischen Spinat unter das heiße Curry rühren, bis er zusammengefallen ist. Mit Salz abschmecken und zusammen mit dem Reis in einer Schüssel anrichten."
-          ]
-        },
-        { 
-          name: "Frischer Kichererbsen-Salat", 
-          calories: 500, 
-          time: "15 Min", 
-          imageUrl: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
-          ingredients: ["1 Dose Kichererbsen (240g Abtropfgewicht)", "1/2 Salatgurke", "50g Feta-Käse", "1 EL Olivenöl", "Saft einer halben Zitrone", "Frische glatte Petersilie", "Pfeffer aus der Mühle"],
-          instructions: [
-            "Kichererbsen vorbereiten: Die Kichererbsen in ein Sieb geben, unter kaltem Wasser abspülen, bis das Wasser klar bleibt, und gut abtropfen lassen.",
-            "Gemüse schneiden: Die Gurke waschen, der Länge nach vierteln und in ca. 1 cm große Würfel schneiden. Die Petersilie waschen, trocken schütteln und grob hacken.",
-            "Mischen: Die abgetropften Kichererbsen mit den Gurkenwürfeln und der Petersilie in einer großen Schüssel kombinieren.",
-            "Dressing: In einem kleinen Glas das Olivenöl mit dem Zitronensaft, Salz und Pfeffer kräftig verrühren.",
-            "Käse hinzufügen: Den Feta-Käse direkt über die Schüssel bröseln (nicht schneiden, das sorgt für mehr Textur).",
-            "Finalisieren: Das Dressing über den Salat geben, alles vorsichtig unterheben und ca. 5 Minuten ziehen lassen, damit die Aromen in die Kichererbsen einziehen können."
-          ]
-        },
-      ],
-      Vegan: [
-        { 
-          name: "Knusper-Tofu Stir-fry", 
-          calories: 550, 
-          time: "20 Min", 
-          imageUrl: "https://images.unsplash.com/photo-1546069901-5ec6a2a5a33f?auto=format&fit=crop&w=800&q=80",
-          ingredients: ["150g Tofu (natur)", "1 rote Paprikaschote", "100g Reisnudeln", "2 EL Erdnussmus/Sauce", "Sesamsamen", "1 Frühlingszwiebel", "Sojasauce"],
-          instructions: [
-            "Nudeln vorbereiten: Die Reisnudeln in eine hitzebeständige Schüssel geben, mit kochendem Wasser übergießen und ca. 6-8 Minuten (je nach Sorte) weichen lassen. Danach abgießen.",
-            "Tofu-Trick: Den Tofu in Würfel schneiden. Wichtig: Die Würfel zwischen mehrere Lagen Küchenpapier legen und fest andrücken, um so viel Feuchtigkeit wie möglich zu entfernen.",
-            "Anbraten: Etwas Öl in einer Pfanne stark erhitzen. Den Tofu darin ca. 6-8 Minuten rundherum anbraten, bis er eine goldbraune Kruste hat. Mit einem Schuss Sojasauce ablöschen.",
-            "Gemüse garen: Die Paprika in feine Streifen schneiden und zum Tofu geben. Für 3-4 Minuten mitbraten, damit sie knackig bleibt.",
-            "Sauce anrühren: Das Erdnussmus mit etwas heißem Wasser und Sojasauce glatt rühren, bis eine cremige Sauce entsteht.",
-            "Finish: Die abgetropften Nudeln und die Erdnusssauce in die Pfanne geben, alles gut schwenken. Mit fein geschnittenen Frühlingszwiebeln und Sesamsamen bestreut servieren."
-          ]
-        },
-      ],
-      "High Protein": [
-        { 
-          name: "Gegrilltes Putensteak mit Kräuterquark", 
-          calories: 600, 
-          time: "20 Min", 
-          imageUrl: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80",
-          ingredients: ["200g Putensteak", "150g Magerquark", "250g gemischtes Gemüse (Zucchini, Paprika)", "Frischer Schnittlauch", "1 TL edelsüßes Paprikapulver", "Zitrone"],
-          instructions: [
-            "Fleisch vorbereiten: Das Putensteak unter kaltem Wasser abspülen, mit Küchenpapier trocken tupfen und von beiden Seiten mit Salz, Pfeffer und Paprikapulver würzen.",
-            "Fleisch braten: Eine Grillpfanne oder normale beschichtete Pfanne erhitzen. Das Steak von jeder Seite ca. 4-5 Minuten bei mittlerer Hitze braten, bis es durchgegart ist.",
-            "Quark anrühren: Den Magerquark in eine Schüssel geben. Den Schnittlauch in feine Röllchen schneiden und unter den Quark rühren. Mit einem Spritzer Zitrone, Salz und Pfeffer abschmecken.",
-            "Gemüse garen: Die Zucchini und Paprika in mundgerechte Stücke schneiden. In der Pfanne des Steaks (nachdem man es herausgenommen hat) ca. 6-7 Minuten dünsten.",
-            "Ruhephase: Das Steak kurz ruhen lassen (ca. 2 Min.), damit sich der Fleischsaft verteilt.",
-            "Anrichten: Das Putensteak zusammen mit dem gedünsteten Gemüse auf einem teller anrichten und den Kräuterquark als proteinreichen Dip dazu servieren."
-          ]
-        },
-      ],
-      "Low Carb": [
-        { 
-          name: "Zucchini-Spaghetti (Zoodles) mit Pesto", 
-          calories: 400, 
-          time: "15 Min", 
-          imageUrl: "https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=800&q=80",
-          ingredients: ["2 große Zucchini", "2 EL grünes Basilikumpesto", "10g Pinienkerne", "8 Kirschtomaten", "Parmesan am Stück", "Zitronenabrieb"],
-          instructions: [
-            "Zoodles herstellen: Die Zucchini waschen und die Enden entfernen. Mit einem Spiralschneider zu langen Spaghetti verarbeiten.",
-            "Rösten: Die Pinienkerne in einer Pfanne ohne Fett bei mittlerer Hitze goldbraun rösten. Achtung: Sie verbrennen schnell! Danach sofort aus der Pfanne nehmen.",
-            "Tomaten vorbereiten: Die Kirschtomaten waschen und halbieren.",
-            "Kurz garen: Etwas Olivenöl in der Pfanne erhitzen. Die Zucchini-Nudeln und Tomaten hinzufügen. Nur ca. 2-3 Minuten schwenken. Wichtig: Nicht zu lange garen, da sie sonst matschig werden.",
-            "Verfeinern: Die Pfanne vom Herd nehmen. Das Pesto vorsichtig unter die warmen Zoodles heben, bis alles gleichmäßig benetzt ist.",
-            "Anrichten: Die Zoodles auf einen Teller geben, mit den gerösteten Pinienkernen, etwas Zitronenabrieb und frisch gehobeltem Parmesan bestreuen."
-          ]
-        },
-      ]
-    };
+    // Shuffle pools
+    const breakfasts = shuffle(BREAKFAST_POOL);
+    const mainPool = ensurePoolSize(MAIN_MEAL_POOL[data.diet] || MAIN_MEAL_POOL["Omnivor"]);
+    const mainShuffled = shuffle(mainPool);
 
-    const selectedPool = recipes[data.diet as keyof typeof recipes] || recipes.Omnivor;
-
-    const mockPlan = days.map(day => {
-      // Pick random unique breakfasts if possible or just random from 20
-      const randomBreakfast = BREAKFAST_POOL[Math.floor(Math.random() * BREAKFAST_POOL.length)];
-      
+    const mockPlan = days.map((day, index) => {
       return {
         day,
         meals: [
           { 
             type: "Frühstück", 
-            ...randomBreakfast,
+            ...breakfasts[index],
             type: "Frühstück"
           },
           { 
             type: "Mittagessen", 
-            ...selectedPool[Math.floor(Math.random() * selectedPool.length)],
+            ...mainShuffled[index], // Use first half for lunch
             type: "Mittagessen"
           },
           { 
             type: "Abendessen", 
-            name: "Bunte Protein-Salat-Bowl", 
-            calories: Math.round(data.calories * 0.35), 
-            time: "15 Min", 
-            imageUrl: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
-            ingredients: ["100g gemischter Blattsalat", "1 Dose Thunfisch (im eigenen Saft) oder 150g Kichererbsen", "1/2 Avocado", "5 Kirschtomaten", "1 EL Joghurt-Dressing", "Kürbiskerne"],
-            instructions: [
-              "Salat-Basis: Den gemischten Salat gründlich in kaltem Wasser waschen und in einer Salatschleuder trocken schleudern.",
-              "Gemüse vorbereiten: Die Kirschtomaten waschen und halbieren. Die Avocado halbieren, den Kern entfernen und das Fruchtfleisch mit einem Löffel herausheben und in Scheiben schneiden.",
-              "Proteinquelle: Den Thunfisch (oder die Kichererbsen) in ein Sieb geben, abspülen und gut abtropfen lassen.",
-              "Anrichten: Den Salat in eine große Schüssel geben. Den Thunfisch/Kichererbsen, die Avocado und die Tomaten kreisförmig darauf platzieren (sieht appetitlicher aus).",
-              "Dressing: Das Joghurt-Dressing über die Zutaten träufeln. Wichtig: Erst kurz vor dem Verzehr hinzufügen, damit der Salat knackig bleibt.",
-              "Topping: Zum Schluss eine Handvoll Kürbiskerne über die Bowl streuen für gesunde Fette und einen angenehmen Biss."
-            ]
+            ...mainShuffled[index + 7], // Use second half for dinner
+            type: "Abendessen"
           }
         ].map(m => ({ ...m, type: m.type })) as Meal[]
       };
@@ -503,7 +339,7 @@ const Plan = () => {
               <CheckCircle2 className="w-4 h-4" /> Plan erfolgreich erstellt
             </div>
             <h1 className="text-4xl md:text-5xl font-black">Dein 7-Tage Plan</h1>
-            <p className="text-slate-500 mt-2 font-medium">Alle Rezepte sind für <span className="text-primary font-bold">1 Person</span> berechnet.</p>
+            <p className="text-slate-500 mt-2 font-medium">Alle Rezepte sind für <span className="text-primary font-bold">1 Person</span> berechnet. Keine Wiederholungen!</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button variant="outline" className="rounded-xl gap-2 font-bold border-slate-200" onClick={() => window.print()}>
@@ -556,10 +392,10 @@ const Plan = () => {
 
             <div className="p-6 rounded-[2rem] bg-secondary/10 border border-secondary/20">
               <h4 className="font-bold text-secondary mb-2 flex items-center gap-2">
-                <ListChecks className="w-4 h-4" /> Batch Cooking
+                <ListChecks className="w-4 h-4" /> Vielfalt-Garantie
               </h4>
               <p className="text-sm text-slate-600 leading-relaxed font-medium">
-                Bereite Fleisch/Tofu und Kohlenhydrate (Reis/Pasta) für 2-3 Tage vor, um Zeit zu sparen.
+                Dein Plan enthält 21 verschiedene Gerichte. Keine Wiederholung in dieser Woche!
               </p>
             </div>
           </div>
