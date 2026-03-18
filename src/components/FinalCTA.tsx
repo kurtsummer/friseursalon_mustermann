@@ -26,8 +26,8 @@ export const FinalCTA = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="w-full sm:w-auto h-16 px-10 rounded-2xl bg-[#6D5EF5] hover:bg-[#6D5EF5]/90 text-white font-bold text-xl shadow-xl shadow-[#6D5EF5]/20 transition-all hover:scale-105 active:scale-95"
               >
                 Jetzt kostenloses Erstgespräch anfragen
@@ -36,7 +36,7 @@ export const FinalCTA = () => {
             </div>
 
             <p className="mt-10 text-slate-400 text-sm font-medium">
-              Völlig unverbindlich • 30 Minuten Zoom oder Telefon • Fokus auf Ihre Ziele
+              30 Minuten Online-Call • Kostenlos & unverbindlich • Zoom oder Telefon
             </p>
           </div>
         </div>

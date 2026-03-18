@@ -28,20 +28,31 @@ export const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-6">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="w-full sm:w-auto h-16 px-10 rounded-2xl bg-[#1F2A44] hover:bg-[#1F2A44]/95 text-white font-bold text-xl shadow-xl shadow-[#1F2A44]/10 transition-all hover-lift active:scale-[0.98]"
               >
                 Kostenloses Erstgespräch anfragen
                 <ArrowRight className="ml-3 w-6 h-6" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="w-full sm:w-auto h-16 px-10 rounded-2xl border-[#1F2A44]/10 text-[#1F2A44]/70 font-bold text-xl hover:bg-white hover:text-[#1F2A44] transition-all hover-lift"
               >
                 Leistungen ansehen
               </Button>
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-6 text-[#1A1D24]/50 text-sm font-semibold">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#7FA38A]"></span>
+                Kostenlos & unverbindlich
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#7FA38A]"></span>
+                30 Min. Online-Call (Zoom)
+              </div>
             </div>
 
             <div className="mt-16 flex flex-wrap items-center gap-8 text-[#1A1D24]/60">
