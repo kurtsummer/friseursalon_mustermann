@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Scissors } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -34,13 +34,12 @@ export const Navbar = () => {
       aria-label="Hauptnavigation"
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group" aria-label="Max Mustermann Salon Homepage">
-          <div className="bg-[#8DA399] p-2 rounded-full text-white group-hover:rotate-12 transition-transform">
-            <Scissors className="w-5 h-5" aria-hidden="true" />
-          </div>
-          <span className="text-xl font-bold tracking-tight text-[#2D3436]">
-            Max Mustermann <span className="text-[#8DA399] font-light">| Salon</span>
-          </span>
+        <Link to="/" className="flex items-center group" aria-label="Max Mustermann Salon Homepage">
+          <img
+            src="/logo.png"
+            alt="Max Mustermann Friseurmeister Logo"
+            className="h-12 md:h-16 w-auto object-contain transition-transform group-hover:scale-105"
+          />
         </Link>
 
         {/* Desktop Nav */}

@@ -1,4 +1,4 @@
-import { Scissors, Instagram, Facebook, Phone } from "lucide-react";
+import { Instagram, Facebook, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
@@ -7,14 +7,13 @@ export const Footer = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="bg-[#8DA399] p-2 rounded-full text-white">
-                <Scissors className="w-5 h-5" aria-hidden="true" />
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                Max Mustermann <span className="text-[#8DA399] font-light">| Salon</span>
-              </span>
-            </div>
+            <Link to="/" className="inline-block group" aria-label="Max Mustermann Salon Homepage">
+              <img
+                src="/logo.png"
+                alt="Max Mustermann Friseurmeister Logo"
+                className="h-16 md:h-20 w-auto object-contain brightness-0 invert opacity-90 transition-transform group-hover:scale-105"
+              />
+            </Link>
             <p className="text-white/60 leading-relaxed">
               Ihr Friseurmeister in Musterhausen. Wir stehen für individuelle Beratung, moderne Schnitte und erstklassigen Service.
             </p>
